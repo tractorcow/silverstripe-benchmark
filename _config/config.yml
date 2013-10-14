@@ -1,0 +1,6 @@
+---
+Name: benchmarkconfig
+---
+DevelopmentAdmin:
+  extensions:
+    - DevelopmentAdminExtension
