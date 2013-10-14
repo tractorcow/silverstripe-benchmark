@@ -79,6 +79,7 @@ class BenchmarkRunner extends Controller {
 		self::$default_reporter->writeHeader();
 		self::$default_reporter->writeInfo('Available Benchmarks', false);
 		$benchmarks = ClassInfo::subclassesFor('SS_Benchmark');
+		array_shift($benchmarks);
 		if(Director::is_cli()) {
 			$relativeLink = Director::makeRelative($this->Link());
 			echo "sake {$relativeLink}all: Run all " . count($benchmarks) . " benchmarks\n";
