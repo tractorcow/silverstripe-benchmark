@@ -59,6 +59,7 @@ class BenchmarkRunner extends Controller {
 	 * Currently excludes PhpSyntaxTest
 	 */
 	public function all($request) {
+		TestRunner::use_test_manifest();
 		$benchmarks = ClassInfo::subclassesFor('SS_Benchmark');
 		array_shift($benchmarks);
 		
@@ -74,6 +75,7 @@ class BenchmarkRunner extends Controller {
 	 * Browse all enabled test cases in the environment
 	 */
 	public function browse() {
+		TestRunner::use_test_manifest();
 		self::$default_reporter->writeHeader();
 		self::$default_reporter->writeInfo('Available Benchmarks', false);
 		$benchmarks = ClassInfo::subclassesFor('SS_Benchmark');
@@ -101,6 +103,7 @@ class BenchmarkRunner extends Controller {
 	 * Run only a single test class or a comma-separated list of tests
 	 */
 	public function only($request) {
+		TestRunner::use_test_manifest();
 		if($request->param('Benchmark') == 'all') {
 			$this->all();
 		} else {

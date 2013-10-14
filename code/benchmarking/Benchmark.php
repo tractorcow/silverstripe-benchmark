@@ -2,7 +2,7 @@
 
 class SS_Benchmark extends SapphireTest {
 	
-	protected $iterations = 1000;
+	protected $iterations = 50;
 	
 	protected $suite = null;
 	

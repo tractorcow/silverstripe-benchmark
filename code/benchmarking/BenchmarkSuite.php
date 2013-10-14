@@ -43,7 +43,7 @@ class BenchmarkSuite {
 	
 	public function ReportMark($description, $average, $iterations) {
 		$result = "$description: $average seconds ($iterations iterations)";
-		if(Director::is_cli()) echo "$result\n";
+		if(Director::is_cli()) echo "$result\n\n";
 		else echo "<p>$result</p>\n";
 	}
 }
