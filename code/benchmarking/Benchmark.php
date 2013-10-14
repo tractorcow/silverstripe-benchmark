@@ -1,18 +1,10 @@
 <?php
 
-class SS_Benchmark {
+class SS_Benchmark extends SapphireTest {
 	
 	protected $iterations = 1000;
 	
 	protected $suite = null;
-	
-	public function setUpOnce() {}
-	
-	public function setUp() {}
-	
-	public function tearDown() {}
-	
-	public function tearDownOnce() {}
 	
 	public function setSuite(BenchmarkSuite $suite) {
 		$this->suite = $suite;
