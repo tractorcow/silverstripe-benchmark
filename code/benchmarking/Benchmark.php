@@ -61,13 +61,12 @@ class SS_Benchmark extends SapphireTest {
 		// implementation of iXHProfRuns.
 		$xhprofRuns = new XHProfRuns_Default();
 		$runID = $xhprofRuns->save_run($xhprofData, "benchmark");
-		$url = "/xhprof/xhprof_html/index.php?run={$runID}&source=benchmark";
+		$url = Director::absoluteURL("/xhprof/xhprof_html/index.php?run={$runID}&source=benchmark");
 		
 		if(Director::is_cli()){
 			$this->suite->Message("$description: Benchmark available at $url");
 		} else {
-			$absURL = Director::absoluteURL($url);
-			echo "<p><a href='$absURL'>$message - Click here for benchmark data</a></p>\n";
+			echo "<p><a href='$url'>$message - Click here for benchmark data</a></p>\n";
 		}
 		
 	}
