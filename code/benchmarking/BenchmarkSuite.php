@@ -42,8 +42,11 @@ class BenchmarkSuite {
 	}
 	
 	public function ReportMark($description, $average, $iterations) {
-		$result = "$description: $average seconds ($iterations iterations)";
-		if(Director::is_cli()) echo "$result\n\n";
-		else echo "<p>$result</p>\n";
+		$this->Message("$description: $average seconds ($iterations iterations)");
+	}
+	
+	public function Message($message) {
+		if(Director::is_cli()) echo "$message\n\n";
+		else echo "<p>$message</p>\n";
 	}
 }
